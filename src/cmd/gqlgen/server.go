@@ -9,8 +9,8 @@ import (
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
-	"github.com/kierano547/go-gql-api/graph"
-	"github.com/kierano547/go-gql-api/graph/generated"
+	"github.com/kieran-osgood/go-gql-api/graph"
+	"github.com/kieran-osgood/go-gql-api/graph/generated"
 	_ "github.com/lib/pq"
 )
 
@@ -45,6 +45,7 @@ func initDatabase() {
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
 		"password=%s dbname=%s sslmode=disable",
 		host, port, user, pass, dbname)
+	log.Printf(psqlInfo)
 
 	db, err := sql.Open("postgres", psqlInfo)
 
